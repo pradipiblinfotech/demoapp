@@ -1,0 +1,34 @@
+.staff-list{
+    .list-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            margin: 0;
+        }
+    }
+}
+.add-staff-modal{
+    .main-content{
+        display: flex;
+        justify-content: center;
+        .custome-shop-input{
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            height: 40px;
+            padding-left: 8px;
+            font-size: 14px;
+        
+        }
+    }
+}
+.action-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .fa-pencil-square-o{
+        padding-right: 15px;
+    }
+}

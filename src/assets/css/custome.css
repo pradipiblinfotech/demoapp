@@ -1,0 +1,21 @@
+.d-flex{
+    display: flex !important;
+}
+.j-c-c{
+    justify-content: center !important;
+}
+.j-c-e{
+    justify-content: end !important;
+}
+.j-c-s{
+    justify-content: start !important;
+}
+.j-c-b{
+    justify-content: space-between !important;
+}
+.a-i-c{
+    align-items: center !important;
+}
+.text-center{
+    text-align: center !important;
+}

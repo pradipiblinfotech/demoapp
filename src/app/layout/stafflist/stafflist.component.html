@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col col-xl-12 col-lg-12">
+        <div class="card mb-3  staff-list">
+            <div class="card-header list-header">
+                <p>Staff Details</p>
+                <i class="fa fa-plus" (click)="OpenStaffModal('','add',AddStaffModal)"></i>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <!-- <th></th> -->
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>DOB</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of Staffdata">
+                            <!-- <th scope="row">3</th> -->
+                            <td>{{data.first_name}}</td>
+                            <td>{{data.last_name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.phone_number}}</td>
+                            <td>{{data.address}}</td>
+                            <td>{{data.birth_date}}</td>
+                            <td class="action-icon">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="OpenStaffModal(data,'edit',AddStaffModal)"></i>
+                                <i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add staff  -->
+<ng-template #AddStaffModal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h6 class="modal-title">Shop Detail</h6>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body add-staff-modal">
+        <div class="col-xl-12 col-12 col-sm-12 main-content">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <!-- <form> -->
+                <div>
+                    <input type="text" class="custome-shop-input" placeholder="First Name" [(ngModel)]="StaffList.first_name">
+                </div>
+                <div>
+                    <input type="text" class="custome-shop-input" placeholder="Last Name" [(ngModel)]="StaffList.last_name">
+                </div>
+                <div>
+                    <input type="email" class="custome-shop-input" placeholder="Email" [(ngModel)]="StaffList.email">
+                </div>
+                <div>
+                    <input type="text" class="custome-shop-input" placeholder="Phone" [(ngModel)]="phone_number">
+                </div>
+                <div>
+                    <input type="text" class="custome-shop-input" placeholder="Address" [(ngModel)]="StaffList.address">
+                </div>
+                <div>
+                    <input type="text" class="custome-shop-input" placeholder="Birthdate" [(ngModel)]="StaffList.birth_date">
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-secondary" (click)="AddStaff();c('Close click')">Add</button>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+    </div> -->
+</ng-template>

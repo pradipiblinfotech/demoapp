@@ -1,0 +1,31 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <!-- <img src="assets/images/logo.png" width="150px" class="user-avatar" /> -->
+            <h1>Login</h1>
+            <form role="form" #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onLoggedin(loginForms)">
+                <div class="form-content">
+                    <div class="form-group" *ngIf="otpoption">
+                        <input type="text" class="form-control input-underline input-lg" placeholder="Email or phone" #contact_info="ngModel" [(ngModel)]="loginModel.contact_info"
+                            required name="emails">
+                        <div *ngIf="contact_info.invalid && (contact_info.touched || loginForm.submitted)">
+                            <p class="input-info error-message" *ngIf="contact_info.errors.required">Email is required</p>
+                            <p class="input-info error-message" *ngIf="contact_info.errors.pattern">Email is not valid.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group" *ngIf="!otpoption">
+                        <input type="password" class="form-control input-underline input-lg" placeholder="Enter OTP" #otp="ngModel" [(ngModel)]="loginModel.otp"
+                            required name="otp">
+                        <div *ngIf="otp.invalid && (otp.touched || loginForm.submitted)">
+                            <p class="input-info error-message" *ngIf="otp.errors.required">OTP is required</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary rounded-btn" type="submit"> Login </button>&nbsp; &nbsp;
+                <!-- <button class="btn btn-secondary rounded-btn" (click)="otplogin()" *ngIf="!otpoption"> Login </button>&nbsp; &nbsp; -->
+                <a class="btn rounded-btn" [routerLink]="['/signup']" *ngIf="otpoption">Register</a>
+            </form>
+        </div>
+    </div>
+</div>

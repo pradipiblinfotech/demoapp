@@ -1,0 +1,16 @@
+.shop-detail-modal{
+    .main-content{
+        display: flex;
+        justify-content: center;
+        .custome-shop-input{
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            height: 40px;
+            padding-left: 8px;
+            font-size: 14px;
+        
+        }
+    }
+}
